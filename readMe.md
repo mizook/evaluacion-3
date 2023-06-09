@@ -22,7 +22,7 @@ dotnet run
 ```
 
 # Utilizar API
-* Se puede testear la API con Postman utilizando la colleción adjunta
+* Se puede testear la API con Postman utilizando la colección adjunta en la carpeta
 ```
 Evaluacion-3.postman_collection.json
 ```
