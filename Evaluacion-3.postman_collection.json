@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "0199d38c-2389-4b1c-a26f-1f2241016ad8",
+		"name": "Evaluacion-3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26765546"
+	},
+	"item": [
+		{
+			"name": "GET Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5204/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5204",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5204/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5204",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
