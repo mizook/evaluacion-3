@@ -12,8 +12,8 @@ using eval_3.Data;
 namespace eval_3.Migrations
 {
     [DbContext(typeof(DbEvaluacion))]
-    [Migration("20230609171946_EvaluacionMigrations")]
-    partial class EvaluacionMigrations
+    [Migration("20230609191238_EvaluacionMigration")]
+    partial class EvaluacionMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,12 +44,7 @@ namespace eval_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("reservesid")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
-
-                    b.HasIndex("reservesid");
 
                     b.ToTable("Books");
 
@@ -85,27 +80,21 @@ namespace eval_3.Migrations
                     b.Property<int>("book_id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("bookid")
-                        .HasColumnType("int");
-
                     b.Property<string>("code")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("date_reserve")
+                    b.Property<DateTime>("date_reserve")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("user_id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("userid")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
-                    b.HasIndex("bookid");
+                    b.HasIndex("book_id");
 
-                    b.HasIndex("userid");
+                    b.HasIndex("user_id");
 
                     b.ToTable("Book_reservations");
 
@@ -123,8 +112,8 @@ namespace eval_3.Migrations
                             id = 2,
                             book_id = 2,
                             code = "6xvGgDMVCYy28epj83P9BUOd",
-                            date_reserve = new DateTime(2023, 6, 8, 19, 37, 54, 0, DateTimeKind.Local),
-                            user_id = 3
+                            date_reserve = new DateTime(2023, 5, 8, 19, 37, 54, 0, DateTimeKind.Local),
+                            user_id = 1
                         },
                         new
                         {
@@ -144,7 +133,7 @@ namespace eval_3.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int?>("cant_reserves_last_mont")
+                    b.Property<int?>("cant_reserves_last_month")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("date_last_reserve")
@@ -166,50 +155,45 @@ namespace eval_3.Migrations
                         new
                         {
                             id = 1,
-                            cant_reserves_last_mont = 1,
-                            date_last_reserve = new DateTime(2023, 6, 9, 19, 37, 54, 0, DateTimeKind.Local),
                             faculty = "Voluptatibus quia voluptatem quia nisi.",
                             name = "Prof. Aleen Konopelski"
                         },
                         new
                         {
                             id = 2,
-                            cant_reserves_last_mont = 0,
                             faculty = "Animi laboriosam voluptatum assumenda odit.",
                             name = "Antoinette Mayer"
                         },
                         new
                         {
                             id = 3,
-                            cant_reserves_last_mont = 1,
-                            date_last_reserve = new DateTime(2023, 6, 8, 19, 37, 54, 0, DateTimeKind.Local),
                             faculty = "Et sed quos enim ut quis hic.",
                             name = "Yvonne Terry"
                         });
                 });
 
-            modelBuilder.Entity("eval_3.Models.Book", b =>
-                {
-                    b.HasOne("eval_3.Models.User", "reserves")
-                        .WithMany()
-                        .HasForeignKey("reservesid");
-
-                    b.Navigation("reserves");
-                });
-
             modelBuilder.Entity("eval_3.Models.BookReservation", b =>
                 {
                     b.HasOne("eval_3.Models.Book", "book")
-                        .WithMany()
-                        .HasForeignKey("bookid");
+                        .WithMany("users")
+                        .HasForeignKey("book_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("eval_3.Models.User", "user")
                         .WithMany("reserves")
-                        .HasForeignKey("userid");
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("book");
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("eval_3.Models.Book", b =>
+                {
+                    b.Navigation("users");
                 });
 
             modelBuilder.Entity("eval_3.Models.User", b =>

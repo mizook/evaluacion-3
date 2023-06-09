@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\caira\\Desktop\\prueba\\eval-3\\eval-3.csproj": {}
+    "C:\\Users\\caira\\Desktop\\prueba\\evaluacion-3\\eval-3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\caira\\Desktop\\prueba\\eval-3\\eval-3.csproj": {
+    "C:\\Users\\caira\\Desktop\\prueba\\evaluacion-3\\eval-3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caira\\Desktop\\prueba\\eval-3\\eval-3.csproj",
+        "projectUniqueName": "C:\\Users\\caira\\Desktop\\prueba\\evaluacion-3\\eval-3.csproj",
         "projectName": "eval-3",
-        "projectPath": "C:\\Users\\caira\\Desktop\\prueba\\eval-3\\eval-3.csproj",
+        "projectPath": "C:\\Users\\caira\\Desktop\\prueba\\evaluacion-3\\eval-3.csproj",
         "packagesPath": "C:\\Users\\caira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caira\\Desktop\\prueba\\eval-3\\obj\\",
+        "outputPath": "C:\\Users\\caira\\Desktop\\prueba\\evaluacion-3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\caira\\AppData\\Roaming\\NuGet\\NuGet.Config",

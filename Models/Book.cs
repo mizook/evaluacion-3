@@ -12,7 +12,6 @@ namespace eval_3.Models {
         public string name { get; set; }
         [Required]
         public string description { get; set; }
-
-        public virtual User? reserves { get; set; }
+        public virtual ICollection<BookReservation> users { get; set; }
     }
 }

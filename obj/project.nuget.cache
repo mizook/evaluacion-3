@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LAhM7gSYh+PyEM6Q75P0FI1PU/X/xs4KCkiGapp8sx79453w2yCs8z5Bq+f9KEXfZVzEwekgQduQwuHEFY0WkQ==",
+  "dgSpecHash": "uQDOy/WlJUGbELxJefp/aiHg/D2TVzuWwaoXYWPEjikE54Oc+oaEeZd/v7N8z7/guQTwtMWSyjQyBrjsrwbsIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\caira\\Desktop\\prueba\\eval-3\\eval-3.csproj",
+  "projectFilePath": "C:\\Users\\caira\\Desktop\\prueba\\evaluacion-3\\eval-3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\caira\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\caira\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

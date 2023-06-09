@@ -32,28 +32,20 @@ namespace eval_3.Data
                     id = 1,
                     name = "Prof. Aleen Konopelski",
                     faculty = "Voluptatibus quia voluptatem quia nisi.",
-                    date_last_reserve = DateTime.Parse("2023-06-09T23:37:54.000000Z"),
-                    cant_reserves_last_mont = 1
                 },
                 new User
                 {
                     id = 2,
                     name = "Antoinette Mayer",
                     faculty = "Animi laboriosam voluptatum assumenda odit.",
-                    date_last_reserve = null,
-                    cant_reserves_last_mont = 0
                 },
                 new User
                 {
                     id = 3,
                     name = "Yvonne Terry",
                     faculty = "Et sed quos enim ut quis hic.",
-                    date_last_reserve = DateTime.Parse("2023-06-08T23:37:54.000000Z"),
-                    cant_reserves_last_mont = 1
                 }
             );
-
-
             // Libros
             modelBuilder.Entity<Book>().HasData(
                 new Book
@@ -89,9 +81,9 @@ namespace eval_3.Data
                 {
                     id = 2,
                     code = "6xvGgDMVCYy28epj83P9BUOd",
-                    user_id = 3,
+                    user_id = 1,
                     book_id = 2,
-                    date_reserve = DateTime.Parse("2023-06-08T23:37:54.000000Z"),
+                    date_reserve = DateTime.Parse("2023-05-08T23:37:54.000000Z"),
                 },
                 new BookReservation
                 {

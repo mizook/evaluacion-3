@@ -30,12 +30,33 @@ namespace eval_3.Controllers
                 u.name,
                 u.faculty,
                 date_last_reserve = u.reserves.OrderByDescending(r => r.date_reserve).FirstOrDefault()?.date_reserve,
-                cant_reserves_last_mont = u.reserves.Count(r => r.date_reserve >= lastMonth),
+                cant_reserves_last_month = u.reserves.Count(r => r.date_reserve >= lastMonth),
                 Reserves = u.reserves.Select(r => new
                 {
-                    r.id,
+                    r.book.id,
                     r.code,
-                    r.book,
+                    book = r.book.name,
+                    r.book.description
+                }).ToList()
+            });
+
+            return Ok(result);
+        }
+
+        [HttpGet("/api/books")]
+        public IActionResult GetBooks()
+        {
+            var books = _context.Books.Include(b => b.users).ToList();
+
+            var result = books.Select(b => new
+            {
+                name = b.name,
+                description = b.description,
+                reserves = b.users.Select(r => new
+                {
+                    id = r.user.id,
+                    name = r.user.name,
+                    faculty = r.user.faculty
                 }).ToList()
             });
 
